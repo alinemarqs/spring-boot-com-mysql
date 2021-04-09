@@ -38,7 +38,7 @@ public class PessoaController {
     }
 
     @PostMapping("/")
-    public void savePerson(@RequestBody PessoaRq pessoa) {
+    public void savePessoa(@RequestBody PessoaRq pessoa) {
         var p = new Pessoa();
         p.setNome(pessoa.getNome());
         p.setSobrenome(pessoa.getSobrenome());
@@ -46,7 +46,7 @@ public class PessoaController {
     }
 
     @PutMapping("/{id}")
-    public void updatePerson(@PathVariable("id") Long id, @RequestBody PessoaRq pessoa) throws Exception {
+    public void updatePessoa(@PathVariable("id") Long id, @RequestBody PessoaRq pessoa) throws Exception {
         var p = pessoaRepository.findById(id);
 
         if (p.isPresent()) {
